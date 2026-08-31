@@ -1,0 +1,27 @@
+name: reasonflow
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+
+  # Scientific stack
+  - pandas
+  - numpy=1.26.4
+  - scipy
+
+  # Dev tooling
+  - ruff
+
+  # ML libs installed via pip so we can pin torch wheels.
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu124
+    - torch>=2.1
+    - transformers>=4.51.0
+    - tokenizers
+    - datasets
+    - accelerate
+    - peft
+    - tqdm
+    - pyyaml

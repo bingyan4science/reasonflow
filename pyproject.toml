@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reasonflow"
+version = "0.1.0"
+description = "Anchored trajectory shaping for chain-of-thought flow matching."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Bing Yan", email = "32602403+bingyan4science@users.noreply.github.com" },
+]
+keywords = ["flow-matching", "reasoning", "chain-of-thought", "diffusion", "gsm8k"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.1",
+    "transformers>=4.51.0",
+    "datasets",
+    "accelerate",
+    "peft",
+    "numpy<2",
+    "pandas",
+    "tqdm",
+    "pyyaml",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501", "E741"]

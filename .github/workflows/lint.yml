@@ -1,0 +1,35 @@
+name: lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package (CPU)
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff
+          # CPU-only torch is enough for import + ruff; we skip the full
+          # CUDA wheel to keep CI fast.
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e .
+
+      - name: Ruff
+        run: ruff check src/ scripts/
+
+      - name: Import smoke test
+        run: |
+          python -c "import reasonflow; print('reasonflow', reasonflow.__version__)"
+          python -c "from reasonflow.models.anchored.suffix_decoder import SuffixDecoder; print('SuffixDecoder ok')"

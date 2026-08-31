@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+.installed.cfg
+
+# Virtual envs
+.venv/
+venv/
+
+# IDE / editor
+.idea/
+.vscode/
+.cursor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Models / training artifacts (do not check into git)
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoints/
+outputs/
+train_logs/*
+!train_logs/README.md
+eval_logs/
+eval_results/
+wandb/
+
+# Dataset files are generated locally and are not redistributed.
+/data/*
+!/data/README.md
+
+# Third-party clones (vendored, not tracked)
+external/
+
+# Paper / draft scratch
+paper/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
