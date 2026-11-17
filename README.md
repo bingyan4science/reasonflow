@@ -1,6 +1,8 @@
-# ReasonFlow
+# ReasonFlow: Flow Matching that Thinks Step by Step
 
-ReasonFlow uses chain-of-thought supervision to shape the latent trajectory for flow matching.
+ReasonFlow uses chain-of-thought supervision to shape continuous latent trajectories in flow matching. The paper studies arithmetic, logical reasoning, and chemistry. This repository provides the GSM8K reproduction.
+
+[Paper](https://aclanthology.org/2026.findings-emnlp.2268/) · [Guide: flow matching for reasoning](https://bingyan.me/research/flow-matching-reasoning/) · [PDF](https://bingyan.me/reasonflow.pdf) · [BibTeX](https://bingyan.me/research/reasonflow.bib)
 
 The GSM8K-Aug source contains 385,620 training examples, and our loaders retain 385,531 after filtering empty required fields.
 
@@ -117,8 +119,8 @@ data/README.md              # how to obtain and preprocess GSM8K-Aug
 
 **ReasonFlow: Flow Matching that Thinks Step by Step**
 
-Bing Yan, Ge Sun, Juan de Pablo, Stefano Martiniani, and Kyunghyun Cho.
-EMNLP 2026 Findings. [OpenReview paper page](https://openreview.net/forum?id=twnft7tZ2X)
+Bing Yan, Ge Sun, Juan J. de Pablo, Stefano Martiniani, and Kyunghyun Cho.
+Findings of EMNLP 2026, pages 48554–48571. [ACL Anthology](https://aclanthology.org/2026.findings-emnlp.2268/) · [DOI: 10.18653/2026.findings-emnlp.2268](https://doi.org/10.18653/2026.findings-emnlp.2268) · [BibTeX](https://bingyan.me/research/reasonflow.bib)
 
 ## License
 
